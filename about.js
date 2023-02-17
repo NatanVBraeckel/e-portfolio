@@ -1,5 +1,5 @@
-const title = document.querySelector("h1");
-const timer = ms => new Promise(res => setTimeout(res, ms))
+
+const timer = ms => new Promise(res => setTimeout(res, ms));
 
 const animationText = async function (element, result, minSpeed = 50, maxSpeed = 125) {
     let current = "";
@@ -14,10 +14,12 @@ const animationText = async function (element, result, minSpeed = 50, maxSpeed =
     return Promise.resolve();
 };
 
+const title = document.querySelector("h1")
 //doe een animationText en dan underlinen van de hoofdtitel
-animationText(title, 'E-PORTFOLIO').then(
+animationText(title, 'OVER MIJ').then(
     () => {
-        document.querySelector(":root").style.setProperty('--width-title-underline', "100%");
+        console.log(title.style.padding)
+        document.querySelector(":root").style.setProperty('--width-title-underline', `100%`);
         document.querySelector(":root").style.setProperty('--title-left', "0");
-        document.querySelector("section").style.opacity = 1;
+        //document.querySelector("section").style.opacity = 1;
     });

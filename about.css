@@ -23,6 +23,25 @@ body {
     color: var(--black);
 }
 
+h1 {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 2rem;
+    max-width: max-content;
+    margin: 1.5rem;
+    position: relative;
+}
+h1::after {
+    content: '';
+    display: block;
+    width: var(--width-title-underline);
+    height: 4px;
+    background: var(--green);
+    transition: all 500ms ease-in-out;
+
+    position: absolute;
+    left: var(--title-left);
+}
+
 nav {
     display: flex;
     justify-content: left;

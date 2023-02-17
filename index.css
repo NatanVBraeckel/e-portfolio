@@ -26,11 +26,10 @@ body {
 
 h1 {
     font-family: 'Ubuntu', sans-serif;
-    max-width: max-content;
-    margin: auto;
-    padding: 30px;
-    position: relative;
     font-size: 2rem;
+    max-width: max-content;
+    margin: 30px auto;
+    position: relative;
 }
 h1::after {
     content: '';
@@ -81,7 +80,7 @@ nav a::after {
     width: 0;
     height: 2px;
     background: var(--green);
-    transition: width 500ms ease-out, left 500ms ease-out;
+    transition: width 400ms ease, left 400ms ease;
 
     position: absolute;
     left: 50%;
