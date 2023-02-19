@@ -1,0 +1,129 @@
+section {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 0 5rem;
+    align-items: center;
+
+    opacity: 0;
+    transition: all 500ms ease;
+}
+
+.project_card {
+    max-width: 80%;
+    border-radius: 10px;
+    box-shadow: 0 0 5px var(--black);
+    overflow: hidden;
+    flex: 0 0 500px;
+    margin-bottom: 3rem;
+
+    display: block;
+}
+.project_card img {
+    max-width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+}
+
+.project_title {
+    font-size: 1rem;
+    padding: 5px;
+}
+
+.project_body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+button {
+    background-color: var(--green);
+    color: var(--white);
+    text-decoration: none;
+    padding: 8px;
+    border-radius: 5px;
+    margin: 5px;
+    margin-left: 0;
+    cursor: pointer;
+}
+button:hover {
+    border: 2px solid var(--light-green);
+}
+
+.info_card {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 0 5px var(--black);
+    width: 80%;
+    margin: 1rem auto;
+}
+.info_card img {
+    max-width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+}
+.info_card h2 {
+    margin-bottom: 1.2rem;
+}
+.info_card p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+.info_body {
+    padding: 15px;
+}
+
+a {
+    color: var(--white);
+    text-decoration: none;
+}
+
+.hidden {
+    display: none !important;
+}
+
+@media screen and (min-width: 750px) {
+    section {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .project_title {
+        font-size: 1.3rem;
+        padding: 15px;
+    }
+    button {
+        font-size: 1rem;
+    }
+
+    .project_card img {
+        max-width: 100%;
+        aspect-ratio: 1;
+        object-fit: cover;
+    }
+
+    .info_card {
+        top: 160px;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+
+    .info_card {
+        display: flex;
+    }
+    .info_card img {
+        max-width: 500px;
+        aspect-ratio: 1;
+        object-fit: cover;
+        flex: 0 0 500px;
+    }
+
+    .info_body {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    
+}
+

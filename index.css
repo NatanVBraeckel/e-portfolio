@@ -28,7 +28,7 @@ h1 {
     font-family: 'Ubuntu', sans-serif;
     font-size: 2rem;
     max-width: max-content;
-    margin: 30px auto;
+    margin: 1.8rem auto;
     position: relative;
 }
 h1::after {
@@ -43,34 +43,17 @@ h1::after {
     left: var(--title-left);
 }
 
-section {
-    font-size: 1.2rem;
-    border-bottom: 3px solid var(--green);
-    border-top: 3px solid var(--green);
-    /* border-radius: 15px; */
-    margin: 0 auto;
-    padding: 15px;
-    max-width: 850px;
-    opacity: 0;
-    transition: all 500ms ease;
-}
-section > p {
-    padding: 5px;
-    text-align: center;
-}
-
 nav {
     display: flex;
-    justify-content: left;
+    justify-content: center;
     padding: 10px;
-    /* border-bottom: 1px solid var(--grey); */
     box-shadow: 0 0 5px var(--grey);
 }
 
 nav a {
     text-decoration: none;
     margin: 0 10px;
-    font-size: 1.1rem;
+    font-size: 0.9rem;
     color: var(--black);
     position: relative;
 }
@@ -97,5 +80,22 @@ a.active::after {
 @media screen and (min-width: 350px) {
     h1 {
         font-size: 2.5rem;
-    }    
+    }
+    nav a {
+        font-size: 1.1rem;
+    }
+}
+
+@media screen and (min-width: 750px) {
+    h1 {
+        font-size: 3.5rem;
+    }
+
+    p {
+        font-size: 1.5rem;
+    }
+
+    nav {
+        justify-content: left;
+    }
 }

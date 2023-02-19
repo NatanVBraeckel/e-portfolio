@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="projects.css">
+    <title>Projecten</title>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">Over mij</a>
+        <a href="projects.html" class="active">Projecten</a>
+    </nav>
+    <h1></h1>
+
+    <section>
+        <div class="project_card">
+            <img src="files/Eisenanalyse.png" alt="Eisenanalyse">
+            <div class="project_body">
+                <h2 class="project_title">Eisenanalyse</h2>
+                <button id="eisen_reveal">Meer info</button>
+            </div>
+        </div>
+
+        <div class="project_card">
+            <img src="files/SIS.png" alt="Space Info Station">
+            <div class="project_body">
+                <h2 class="project_title">Space info station</h2>
+                <button id="sis_reveal">Meer info</button>
+            </div>
+        </div>
+
+        <div class="project_card">
+            <img src="files/POP_project.png" alt="Wat gaan we eten? POP project">
+            <div class="project_body">
+                <h2 class="project_title">Wat gaan we eten?</h2>
+                <button id="wgwe_reveal">Meer info</button>
+            </div>
+        </div>
+    </section>
+
+    <div id="info_eisen" class="info_card hidden">
+        <img src="files/Eisenanalyse.png" alt="Eisenanalyse">
+        <div class="info_body">
+            <div>
+                <h2>Eisenanalyse</h2>
+                <p>
+                    Dit project was in opdracht van het vak Requirements Analysis. 
+                    In groep kregen een opdracht van een klant die de administratie van zijn hockeyclub wou digitaliseren.
+                </p>
+                <p>
+                    Alle use cases werden verdeeld over de groepsleden. 
+                    Bij elke use case werd een beschrijving en een prototype gemaakt.
+                    In dit project heb ik geleerd om een project vanuit een ander standpunt te bekijken.
+                </p>
+            </div>
+            <div>
+                <button class="backButton">Sluiten</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="info_sis" class="info_card hidden">
+        <img src="files/SIS.png" alt="Space Info Station">
+        <div class="info_body">
+            <div>
+                <h2>Space Info Station</h2>
+                <p>
+                    Dit project was in opdracht van het vak Webdesign Advanced. 
+                    In groep mochten we een thema kiezen. Voor dat thema moest elk teamlid 2 pagina's maken met behulp van Bootstrap componenten, Sass en JavaScript.
+                    Wij hadden gekozen voor een ruimte-thema. 
+                </p>
+                <p>
+                    Dit project verliep niet vlekkeloos. Er was 1 iemand in onze groep die zelden van zich liet horen, en dat zorgde voor veel vertragingen.
+                    Dat heeft er tot geleid dat ik knopen moest doorhakken en de leiding moest nemen, iets dat ik normaal niet doe.
+                    Ondanks de problemen vind ik het project zeker geslaagd en ben trots op de JavaScript die ik heb geschreven en dat ik het voortouw heb genomen.
+                </p>
+            </div>
+            <div>
+                <button><a href="https://webadvanced-602.netlify.app/">Website</a></button>
+                <button class="backButton">Sluiten</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="info_wgwe" class="info_card hidden">
+        <img src="files/POP_project.png" alt="Wat gaan we eten? POP project">
+        <div class="info_body">
+            <div>
+                <h2>Wat gaan we eten?</h2>
+                <p>Dit project was in opdracht van Professional Skills. 
+                    De opdracht was om een eigen idee uit te werken met behulp van een technologie
+                    die je nog niet kende. Ik had ervoor gekozen om met Vue te werken, een JavaScript framework
+                    met gelijkenissen aan Angular en React.
+                </p>
+                <p>
+                    Het project geeft een overzicht van gerechten waar men in kan filteren, gerechten kan toevoegen en verwijderen.
+                </p>
+            </div>
+            <div>
+                <button><a href="https://github.com/NatanVBraeckel/pop_project_natan_van_braeckel">GitHub repository</a></button>
+                <button class="backButton">Sluiten</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="title.js"></script>
+    <script src="projects.js"></script>
+</body>
+</html>
