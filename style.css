@@ -1,0 +1,358 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap');
+
+:root {
+    --white: #f5f5f5;
+    --black: #222;
+    --forever-black: #222;
+    --forever-white: #f5f5f5;
+    --dark-black: #111;
+    --icon-color: rgba(230,230,230,.5);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+    background-color: var(--white);
+    color: var(--black);
+    font-size: 16px;
+    overflow-x: hidden;
+    transition: 250ms;
+}
+
+nav {
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    height: 3rem;
+    z-index: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--dark-black);
+}
+nav a {
+    text-transform: uppercase;
+    flex: 1 0 33.33%;
+    font-size: 1rem;
+    font-weight: bold;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--forever-white);
+    background-color: var(--dark-black);
+}
+nav a:hover {
+    transform: translate(0px, -5px);
+}
+
+.linkbutton {
+    font-weight: bold;
+    font-size: 1.25rem;
+    background-color: var(--black);
+    text-decoration: none;
+    border-radius: 15px;
+    text-align: center;
+    padding: .8rem 1rem;
+    width: 200px;
+    position: relative;
+}
+.linkbutton:after {
+    content: "";
+    position: absolute;
+    opacity: 0.3;
+    background-color: var(--black);
+    border-radius: inherit;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    transition: all 250ms;
+}
+.linkbutton:hover {
+    transform: translateY(-10px);
+}
+.linkbutton:hover::after {
+    transform: translateY(10px);
+}
+
+a {
+    background-color: var(--black);
+    color: var(--white);
+    text-decoration: none;
+    transition: 250ms;
+}
+
+/* home */
+
+h1 {
+    font-weight: bold;
+    font-size: 4rem;
+    text-align: center;
+    margin-top: 3rem;
+}
+#home p {
+    font-size: 1.25rem;
+    text-align: center;
+}
+
+#home div {
+    margin-top: 6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+/*about me*/
+
+#about_me, #projecten{
+    padding-inline: 1rem;
+    margin-top: 20rem;
+}
+
+h2 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--black);
+    margin-bottom: 2.5rem;
+}
+
+.ditwordtdeimage {
+    background-color: var(--white);
+    width: 220px;
+    height: 220px;
+    border: 2px solid var(--black);
+}
+
+.profiel {
+    display: flex;
+    gap: 2rem;
+}
+.links {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.links i {
+    font-size: 2rem;
+    height: 2rem;
+    width: 2rem;
+}
+.links a {
+    padding: 0.5rem;
+    border-radius: 50%;
+}
+
+#about_me p {
+    font-size: 1.25rem;
+    margin-top: 2rem;
+    line-height: 1.5;
+}
+#about_me .linkbutton{
+    display: inline-block;
+    margin-top: 3rem;
+}
+.highlight {
+    font-weight: bold;
+    color: (--black);
+}
+
+/* projecten */
+
+.project-card {
+    margin-bottom: 5rem;
+    padding: 1rem;
+    box-shadow: 0 0 5px var(--black);
+    border-radius: 5px;
+    max-width: 900px;
+    background-color: var(--white);
+}
+.project-card img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+.project-card h3 {
+    font-size: 1.5rem;
+    margin-block: .7rem;
+}
+.project-card a {
+    padding: 0;
+    color: var(--black);
+    background-color: initial;
+    text-decoration: underline;
+}
+
+/* querystuff */
+
+.navborder {
+    border-right: none;
+    border-top: 2px solid var(--forever-white);
+}
+.small-hide {
+    display: none;
+}
+.small-show {
+    display: inline-block;
+}
+
+/* javascript */
+.icon {
+    color: var(--icon-color);
+    font-size: 6rem;
+    position: absolute;
+    left: 0;
+    z-index: -10;
+    transition: 250ms;
+}
+
+@media only screen and (min-width: 900px) {
+    .small-hide {
+        display: inline-block;
+    }
+    .small-show {
+        display: none;
+    }
+
+    body {
+        margin-left: 4rem;
+        margin-right: 3rem;
+    }
+    nav {
+        transform: translateX(-4rem);
+    }
+
+    .linkbutton {
+        font-size: 2rem;
+        padding: 1.2rem;
+        display: inline-block;
+        width: 300px;
+    }
+
+    /* home */
+
+    h1 {
+        font-weight: bold;
+        font-size: 4.5rem;
+        text-align: left;
+        margin-top: 7rem;
+    }
+    h3 {
+        font-size: 4rem;
+        line-height: 4rem;
+    }
+    #home p {
+        font-size: 2rem;
+        text-align: left;
+        margin-top: 2rem;
+        line-height: 3rem;
+        max-width: 800px;
+    }
+    
+    #home div {
+        margin-top: 6rem;
+        display: block;
+    }
+    #home div a:nth-child(1) {
+        margin-right: 3rem;
+    }
+
+
+    /* about me */
+
+    #about_me, #projecten{
+        padding-inline: 0;
+    }
+    h2 {
+        font-size: 4rem;
+    }
+    
+    .ditwordtdeimage {
+        width: 275px;
+        height: 385px;
+    }
+    
+    .profiel {
+        gap: 5rem;
+    }
+    .links i {
+        font-size: 3rem;
+        height: 3rem;
+        width: 3rem;
+    }
+    .links a {
+        padding: .8rem;
+    }
+    
+    #about_me p {
+        font-size: 1.5rem;
+        line-height: 1.25;
+        max-width: 800px;
+    }
+
+    /* projecten */
+
+    .project-card h3 {
+        font-size: 3rem;
+        font-weight: 400;
+    }
+    .project-card a {
+        font-size: 2rem;
+    }
+    
+}
+
+@media screen and (min-width: 1300px) {
+    body {
+        display: flex;
+    }
+
+    nav {
+        position: fixed;
+        width: 200px;
+        height: 100vh;
+        flex-direction: column;
+    }
+    nav a {
+        width: 100%;
+        max-width: initial;
+        font-size: 1.5rem;
+    }
+    nav a:hover {
+        transform: translate(10px, 0px);
+    }
+    main {
+        margin-left: 300px;
+        position: relative;
+    }
+
+    .navborder {
+        border-right: 2px solid var(--forever-white);
+        border-top: none;
+    }
+
+    /* about me */
+    #about_me > div {
+        display: flex;
+        flex-direction: row-reverse;
+        gap: 5rem;
+    }
+    .profiel {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    #about_me section p:nth-child(1){
+        margin: 0;
+    }
+    .links {
+        flex-direction: row;
+    }
+}

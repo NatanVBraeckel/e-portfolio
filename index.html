@@ -1,34 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="home.css">
-    <link rel="icon" type="image/x-icon" href="files/favicon.ico">
-    <title>E-portfolio Natan</title>
+    <meta name="description" content="Het e-portfolio van Natan Van Braeckel">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <title>E-portfolio</title>
 </head>
-<body>
-    <nav>
-        <a href="index.html" class="active">Home</a>
-        <a href="about.html">Over mij</a>
-        <a href="projects.html">Projecten</a>
-    </nav>
-    <h1></h1>
-    <section>
-        <p>
-            Welkom op mijn e-portfolio.
-        </p>
-        <p>
-            Mijn naam is Natan&nbsp;Van&nbsp;Braeckel. Ik ben student APP/AI
-             aan Thomas&nbsp;More&nbsp;Geel. Op deze site geef ik meer info over
-              mezelf en over enkele projecten die ik al heb gemaakt tijdens mijn loopbaan
-              op de hogeschool.
-        </p>
 
-    </section>
-    <script src="title.js"></script>
-    <script src="index.js"></script>
+<body id="top">
+
+    <nav>
+        <a href="#top" class="navborder">Home</a>
+        <a href="#about_me" class="navborder">About me</a>
+        <a href="#projecten" class="navborder">Projecten</a>
+    </nav> 
+
+    <main>
+        <button style="padding: .5rem; background-color: var(--black); border: none; border-radius: 50%; width: 3rem; height: 3rem;
+                        position: fixed; top: .5rem; right: .5rem; cursor: pointer;" tabindex="0" aria-label="Color theme button">
+            <i style="color: var(--white); font-size: 2rem;" class="fa-solid fa-sun"></i>
+        </button>
+
+        <div id="home">
+            <h1>Welkom<span class="small-show">!</span>
+                
+            </h1>
+            <h3 class="small-hide">op mijn e-portfolio!</h3>
+            <p>Ik ben Natan, student APP/AI<span class="small-show">.</span><span class="small-hide">&#160aan Thomas More Geel.</span></p>
+            <p class="small-hide">Op deze site geef ik meer info over mezelf en over enkele
+                projecten die ik al heb gemaakt tijdens mijn loopbaan op de hogeschool.</p>
+        
+            <div>
+                <a href="#about_me" class="linkbutton">Leer mij kennen</a>
+                <a href="#projecten" class="linkbutton">Mijn projecten</a>
+            </div>
+        </div>
+
+        <div id="about_me">
+            <h2>About me</h2>
+            <div>
+                <div class="profiel">
+                    <div class="ditwordtdeimage"></div>
+                    <div class="links">
+                        <a href="https://www.github.com/NatanVBraeckel" aria-label="github account"><i style="transform: translateX(1px);" class="fa-brands fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/natan-van-braeckel-010767251/" aria-label="linkedin account"><i style="transform: translateX(3px);" class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="https://www.twitter.com/vb_natan" aria-label="twitter account"><i style="transform: translateY(2px);" class="fa-brands fa-twitter"></i></a>
+                    </div>
+                </div>
+    
+                <section>
+                    <p>
+                        Ik ben <span class="highlight">Natan Van Braeckel.</span>
+                    </p>
+                    <p>
+                        Een <span id="age">21</span> jarige student Toegepaste Informatica bij Thomas More Geel.
+                        Naast mijn studies ga ik graag wandelen met onze hond Mika, 
+                        en ik ga regelmatig eens joggen.
+                    </p>
+                    <p>
+                        <span class="highlight">Ik studeer</span> sinds 2020 Toegepaste Informatica bij Thomas More Geel, en doe nu de APP/AI keuzerichting.
+                        Ik doe deze studies omdat ik altijd al interesse had in informatica, en deze blijft maar groeien.
+                    </p>
+                    <p>
+                        <span class="highlight">In de toekomst</span> zie ik mezelf
+                        als een echte asset in een development-team, iemand die altijd wilt bijleren en unieke standpunten kan bieden.
+                    </p>
+    
+                    <a href="assets/CV_NatanVanBraeckel_2022.pdf" class="linkbutton" target="_blank">Bekijk mijn CV</a>
+                </section>
+            </div>
+        </div>
+
+        <div id="projecten">
+            <h2>Projecten</h2>
+            <section>
+                <div class="project-card">
+                    <img src="assets/webadv.png" alt="Space Info Station">
+                    <h3>Space Info Station</h3>
+                    <a href="#projecten">Lees meer</a>
+                </div>
+
+                <div class="project-card">
+                    <img src="assets/POP_project.png" alt="Wat gaan we eten?">
+                    <h3>Wat gaan we eten?</h3>
+                    <a href="#projecten">Lees meer</a>
+                </div>
+
+                <div class="project-card">
+                    <img src="assets/Eisenanalyse.png" alt="Eisenanalyse">
+                    <h3>Eisenanalyse</h3>
+                    <a href="#projecten">Lees meer</a>
+                </div>
+            </section>
+
+        </div>
+
+    </main>
+
+
+<script src="index.js"></script>
 </body>
 </html>
