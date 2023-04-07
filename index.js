@@ -3,6 +3,9 @@ const white = "#f5f5f5";
 const black = "#222";
 const iconBlack = "rgba(50,50,50,.5)";
 const iconWhite = "rgba(230,230,230,.5)";
+let score = 0;
+const scoreCard = document.getElementById("score");
+scoreCard.innerText = score;
 
 const button = document.querySelector("button");
 const iconButton = button.querySelector("i");
@@ -45,8 +48,12 @@ document.querySelectorAll("a[href^='#']").forEach(anchor => {
     });
 });
 
-
 //fun stuff (programmingstuff animatie)
+
+const updateScore = (amount) => {
+    score += amount;
+    scoreCard.innerText = score;
+}
 
 function getRandomArbitrary(min, max) {
     return Math.random() * (max - min) + min;
@@ -66,34 +73,57 @@ const iconClassesList = [
     ["fa-brands", "fa-sass"],
 ];
 
-const iconTiming = {
-duration: 5000,
-iterations: 1,
-};
-
 const iconSpawnAnimation = () => {
 
     const randomStartY = getRandomArbitrary(window.scrollY, window.scrollY + window.innerHeight);
     const randomEndY = getRandomArbitrary(window.scrollY, window.scrollY + window.innerHeight);
 
+    let iconHitbox = document.createElement("div");
+    Object.assign(iconHitbox.style, 
+        {
+            //border: "1px solid blue",
+            zIndex: "5",
+            width: "6rem",
+            height: "6rem",
+            position: "absolute",
+            left: "0",
+            top: `${randomStartY}px`,
+        });
+
     let icon = document.createElement("div");
     icon.classList.add("icon");
     Object.assign(icon.style, {top: `${randomStartY}px`});
-
+    //pak een random fontawesome icon classesarray en voeg ze toe aan de div
     let iconClasses = iconClassesList[Math.floor(Math.random()*iconClassesList.length)];
     iconClasses.forEach(element => icon.classList.add(element));
 
+    document.querySelector("main").appendChild(iconHitbox);
     document.querySelector("main").appendChild(icon);
+
+    iconHitbox.addEventListener("click", () => {
+        updateScore(1);
+        iconHitbox.remove();
+        icon.remove();
+    });
     
-    console.log(`end = ${Math.ceil(randomEndY)}`);
-    console.log(`start = ${Math.ceil(randomStartY)}`);
-    console.log(`difference = ${Math.ceil(randomEndY - randomStartY)}`);
+    // console.log(`end = ${Math.ceil(randomEndY)}`);
+    // console.log(`start = ${Math.ceil(randomStartY)}`);
+    // console.log(`difference = ${Math.ceil(randomEndY - randomStartY)}`);
+
+    //animation
     const iconSpinning = [
         { transform: "translate(-300px, 0) rotate(0)" },
         { transform: `translate(100vw, ${Math.ceil(randomEndY - randomStartY)}px) rotate(${getRandomArbitrary(180, 720)}deg)` },
     ];
-    const iconAnimation = icon.animate(iconSpinning, iconTiming);
+    const iconTiming = {
+            duration: 5000,
+            iterations: 1,
+        };
+    const iconAnimation = iconHitbox.animate(iconSpinning, iconTiming);
+    icon.animate(iconSpinning, iconTiming);
+    //remove na animation
     iconAnimation.onfinish = () => {
+        iconHitbox.remove();
         icon.remove();
     }
 }
