@@ -50,6 +50,7 @@ nav a {
 }
 nav a:hover {
     transform: translate(0px, -5px);
+    border-radius: 10px;
 }
 
 .linkbutton {
@@ -129,11 +130,22 @@ h2 {
     margin-bottom: 2.5rem;
 }
 
-.ditwordtdeimage {
+/* .ditwordtdeimage {
     background-color: var(--white);
     width: 220px;
     height: 220px;
     border: 2px solid var(--black);
+} */
+#about_me img {
+    object-fit: cover;
+    object-position: top;
+    width: 220px;
+    height: 220px;
+    /* background-color: var(--white); */
+    border: 2px solid var(--black);
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    transition: all 250ms;
 }
 
 .profiel {
@@ -211,7 +223,7 @@ h2 {
 /* javascript */
 .icon {
     color: var(--icon-color);
-    font-size: 6rem;
+    font-size: 4rem;
     position: absolute;
     left: 0;
     z-index: -10;
@@ -283,7 +295,11 @@ h2 {
         font-size: 4rem;
     }
     
-    .ditwordtdeimage {
+    /* .ditwordtdeimage {
+        width: 275px;
+        height: 385px;
+    } */
+    #about_me img {
         width: 275px;
         height: 385px;
     }
@@ -316,6 +332,9 @@ h2 {
         font-size: 2rem;
     }
     
+    .icon {
+        font-size: 6rem;
+    }
 }
 
 @media screen and (min-width: 1300px) {
@@ -336,6 +355,7 @@ h2 {
     }
     nav a:hover {
         transform: translate(10px, 0px);
+        border-radius: 15px;
     }
     main {
         margin-left: 300px;

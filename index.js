@@ -58,7 +58,7 @@ const updateScore = (amount) => {
 function getRandomArbitrary(min, max) {
     return Math.random() * (max - min) + min;
 }
-
+ 
 const iconClassesList = [
     ["fa-brands","fa-js"],
     ["fa-brands", "fa-html5"],
