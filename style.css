@@ -3,6 +3,7 @@
 :root {
     --white: #f5f5f5;
     --black: #222;
+    --green: #00C894;
     --forever-black: #222;
     --forever-white: #f5f5f5;
     --dark-black: #111;
@@ -64,7 +65,7 @@ nav a:hover {
     width: 200px;
     position: relative;
 }
-.linkbutton:after {
+.linkbutton:before {
     content: "";
     position: absolute;
     opacity: 0.3;
@@ -80,7 +81,7 @@ nav a:hover {
 .linkbutton:hover {
     transform: translateY(-10px);
 }
-.linkbutton:hover::after {
+.linkbutton:hover::before {
     transform: translateY(10px);
 }
 
@@ -105,7 +106,7 @@ h1 {
 }
 
 #home div {
-    margin-top: 6rem;
+    margin-top: 3rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -165,6 +166,27 @@ h2 {
 .links a {
     padding: 0.5rem;
     border-radius: 50%;
+    position: relative;
+    transform-style: preserve-3d;
+}
+.links a::after {
+    content: "";
+    position: absolute;
+    opacity: .3;
+    background-color: var(--black);
+    border-radius: inherit;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    transition: all 250ms;
+    transform: translateZ(-1px);
+}
+.links a:hover {
+    transform: translateY(-6px);
+}
+.links a:hover::after {
+    transform: translateY(6px) translateZ(-1px);
 }
 
 #about_me p {
@@ -278,7 +300,6 @@ h2 {
     }
     
     #home div {
-        margin-top: 6rem;
         display: block;
     }
     #home div a:nth-child(1) {
@@ -368,9 +389,6 @@ h2 {
     }
 
     /* about me */
-    #about_me {
-        scroll-margin-top: 8rem;
-    }
     
     #about_me > div {
         display: flex;

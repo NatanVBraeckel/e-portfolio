@@ -1,11 +1,11 @@
 let isLight = true;
 const white = "#f5f5f5";
 const black = "#222";
-const iconBlack = "rgba(50,50,50,.5)";
+const iconBlack = "rgba(19,19,19,.5)";
 const iconWhite = "rgba(230,230,230,.5)";
+let iconColor = iconWhite;
 let score = 0;
 const scoreCard = document.getElementById("score");
-scoreCard.innerText = score;
 
 const button = document.querySelector("button");
 const iconButton = button.querySelector("i");
@@ -24,6 +24,7 @@ button.addEventListener("click", () => {
         iconButton.classList.add("fa-sun");
         iconButton.classList.remove("fa-moon");
         document.querySelector(":root").style.setProperty('--icon-color', iconWhite);
+        iconColor = iconWhite;
         isLight = true;
     }
 });
@@ -73,6 +74,38 @@ const iconClassesList = [
     ["fa-brands", "fa-sass"],
 ];
 
+const explosion = (posX, posY) => {
+    let explosionDiv = document.createElement("div");
+    Object.assign(explosionDiv.style, 
+        {
+            border: `1px solid ${iconColor}`,
+            width: "1rem",
+            height: "1rem",
+            position: "absolute",
+            left: `${posX}px`,
+            top: `${posY}px`,
+            borderRadius: "50%",
+            transform: "translate(-50%, -50%)",
+            zIndex: "-1"
+        });
+    document.querySelector("body").appendChild(explosionDiv);
+
+    //animation
+    const sizeIncrease = [
+        { transform: "translate(-50%, -50%) scale(1)" },
+        { transform: `translate(-50%, -50%) scale(3)`, offset: 0.5 },
+        { transform: `translate(-50%, -50%) scale(4)`, opacity: 0 },
+    ];
+    const explosionTiming = {
+            duration: 500,
+            iterations: 1,
+        };
+    const explosionAnimation = explosionDiv.animate(sizeIncrease, explosionTiming);
+    explosionAnimation.onfinish = () => {
+        explosionDiv.remove();
+    }
+}
+
 const iconSpawnAnimation = () => {
 
     const randomStartY = getRandomArbitrary(window.scrollY, window.scrollY + window.innerHeight);
@@ -104,6 +137,9 @@ const iconSpawnAnimation = () => {
         updateScore(1);
         iconHitbox.remove();
         icon.remove();
+        console.log(`X position: ${window.event.clientX}`);
+        console.log(`Y position: ${window.event.clientY + window.scrollY}`);
+        explosion(window.event.clientX + window.scrollX, window.event.clientY + window.scrollY);
     });
     
     // console.log(`end = ${Math.ceil(randomEndY)}`);
@@ -121,6 +157,7 @@ const iconSpawnAnimation = () => {
         };
     const iconAnimation = iconHitbox.animate(iconSpinning, iconTiming);
     icon.animate(iconSpinning, iconTiming);
+
     //remove na animation
     iconAnimation.onfinish = () => {
         iconHitbox.remove();
