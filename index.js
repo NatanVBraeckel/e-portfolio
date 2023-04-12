@@ -127,7 +127,7 @@ const explosion = (posX, posY) => {
     }
 }
 
-const iconSpawnAnimation = () => {
+const spawnIcon = () => {
 
     const randomStartY = getRandomArbitrary(window.scrollY, window.scrollY + window.innerHeight);
     const randomEndY = getRandomArbitrary(window.scrollY, window.scrollY + window.innerHeight);
@@ -158,8 +158,8 @@ const iconSpawnAnimation = () => {
         updateScore(1);
         iconHitbox.remove();
         icon.remove();
-        console.log(`X position: ${window.event.clientX}`);
-        console.log(`Y position: ${window.event.clientY + window.scrollY}`);
+        // console.log(`X position: ${window.event.clientX}`);
+        // console.log(`Y position: ${window.event.clientY + window.scrollY}`);
         explosion(window.event.clientX + window.scrollX, window.event.clientY + window.scrollY);
     });
     
@@ -187,5 +187,5 @@ const iconSpawnAnimation = () => {
 }
 
 window.setInterval(() => {
-    iconSpawnAnimation();
+    spawnIcon();
 }, 7500);
