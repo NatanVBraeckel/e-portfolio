@@ -38,18 +38,38 @@ function calculate_age(dob) {
 }
 document.getElementById("age").innerText = calculate_age(new Date(2001, 6, 8));
 
+
 //smooth scroll
 
-document.querySelectorAll("a[href^='#']").forEach(anchor => {
-    anchor.addEventListener("click", function(e){
-        e.preventDefault();
-        document.querySelector(this.getAttribute("href")).scrollIntoView({
-            behavior : "smooth"
+//document.querySelectorAll("a[href^='#']")
+const anchorTop = document.querySelector("a[href='#']");
+const IdAnchors = ["about_me", "projecten"];
+
+anchorTop.addEventListener("click", function(e){
+    e.preventDefault();
+    window.scroll({top: 0, behavior: "smooth"})
+});
+
+IdAnchors.forEach(id => {
+    document.querySelectorAll(`a[href='#${id}']`).forEach(anchor => {
+        anchor.addEventListener("click", function(e){
+            let blockOption = "center";
+            if(window.innerHeight < document.getElementById(id).clientHeight){
+                document.getElementById(`${id}`).classList.add("scroll-margin-top");
+                blockOption = "start";
+            }
+            e.preventDefault();
+            document.querySelector(this.getAttribute("href")).scrollIntoView({
+                behavior : "smooth",
+                block: blockOption,
+            });
+            document.getElementById(`${id}`).classList.remove("scroll-margin-top");
         });
     });
 });
 
-//fun stuff (programmingstuff animatie)
+
+//fun stuff
 
 const updateScore = (amount) => {
     score += amount;
@@ -72,6 +92,7 @@ const iconClassesList = [
     ["fa-brands", "fa-figma"],
     ["fa-brands", "fa-linux"],
     ["fa-brands", "fa-sass"],
+    ["fa-brands", "fa-docker"],
 ];
 
 const explosion = (posX, posY) => {
@@ -165,7 +186,6 @@ const iconSpawnAnimation = () => {
     }
 }
 
-iconSpawnAnimation();
 window.setInterval(() => {
     iconSpawnAnimation();
 }, 7500);

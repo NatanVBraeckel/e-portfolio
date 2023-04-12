@@ -54,6 +54,32 @@ nav a:hover {
     border-radius: 10px;
 }
 
+#score {
+    position: fixed;
+    top: 4rem;
+    right: .5rem;
+    width: 3rem;
+    text-align: center;
+    font-size: 2rem;
+}
+
+#light-switch {
+    padding: .5rem;
+    background-color: var(--black);
+    border: none;
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    position: fixed;
+    top: .5rem;
+    right: .5rem;
+    cursor: pointer;
+}
+#light-switch i {
+    color: var(--white);
+    font-size: 2rem;
+}
+
 .linkbutton {
     font-weight: bold;
     font-size: 1.25rem;
@@ -118,10 +144,7 @@ h1 {
 #about_me, #projecten{
     padding-inline: 1rem;
     margin-top: 20rem;
-    scroll-margin-top: 2rem;
-}
-#projecten {
-    scroll-margin-top: 2rem;
+    /* scroll-margin-top: 2rem; */
 }
 
 h2 {
@@ -251,9 +274,8 @@ h2 {
     z-index: -10;
     transition: 250ms;
 }
-
-#top {
-    scroll-margin-top: 20rem;
+.scroll-margin-top {
+    scroll-margin-top: 2rem;
 }
 
 @media only screen and (min-width: 900px) {
