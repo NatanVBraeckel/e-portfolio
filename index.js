@@ -13,6 +13,7 @@ button.addEventListener("click", () => {
     if(isLight){
         document.querySelector(":root").style.setProperty('--black', white);
         document.querySelector(":root").style.setProperty('--white', black);
+        document.querySelector(":root").style.setProperty('--gray', "#111");
         iconButton.classList.add("fa-moon");
         iconButton.classList.remove("fa-sun");
         document.querySelector(":root").style.setProperty('--icon-color', iconBlack);
@@ -21,6 +22,8 @@ button.addEventListener("click", () => {
     } else {
         document.querySelector(":root").style.setProperty('--black', black);
         document.querySelector(":root").style.setProperty('--white', white);
+        document.querySelector(":root").style.setProperty('--gray', "#eaeaea");
+
         iconButton.classList.add("fa-sun");
         iconButton.classList.remove("fa-moon");
         document.querySelector(":root").style.setProperty('--icon-color', iconWhite);
@@ -155,7 +158,7 @@ const spawnIcon = () => {
     document.querySelector("main").appendChild(icon);
 
     iconHitbox.addEventListener("click", () => {
-        updateScore(1);
+        //updateScore(1);
         iconHitbox.remove();
         icon.remove();
         // console.log(`X position: ${window.event.clientX}`);

@@ -3,6 +3,7 @@
 :root {
     --white: #fafafa;
     --black: #222;
+    --gray: #eaeaea;
     --forever-black: #222;
     --forever-white: #f5f5f5;
     --dark-black: #111;
@@ -25,7 +26,7 @@ body {
 }
 
 h1, h2, h3 {
-    font-family: "Mogra", cursi;
+    font-family: "Mogra", cursive;
 }
 
 nav {
@@ -144,7 +145,7 @@ h1 {
 
 /*about me*/
 
-#about_me, #projecten{
+#about_me, #projecten h2{
     padding-inline: 1rem;
     margin-top: 20rem;
     /* scroll-margin-top: 2rem; */
@@ -157,18 +158,11 @@ h2 {
     margin-bottom: 2.5rem;
 }
 
-/* .ditwordtdeimage {
-    background-color: var(--white);
-    width: 220px;
-    height: 220px;
-    border: 2px solid var(--black);
-} */
 #about_me img {
     object-fit: cover;
     object-position: top;
     width: 220px;
     height: 220px;
-    /* background-color: var(--white); */
     border: 2px solid var(--black);
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
@@ -231,27 +225,49 @@ h2 {
 
 /* projecten */
 
-.project-card {
-    margin-bottom: 5rem;
-    padding: 1rem;
-    box-shadow: 0 0 5px var(--black);
-    border-radius: 5px;
-    max-width: 900px;
-    background-color: var(--white);
+#projecten section {
+    background-color: var(--gray);
+    margin-bottom: 3rem;
+    padding: 2rem;
+
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+    justify-content: center;
+    box-shadow: 0 0 10px var(--gray);
 }
-.project-card img {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    object-fit: cover;
+#projecten section img {
+    max-width: 300px;
+    height: auto;
+
+    order: 1;
 }
-.project-card h3 {
+#projecten section > div {
+    flex: 1 0 300px;
+    order: 2;
+
+    padding-top: 1rem;
+    padding-right: 1rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+#projecten section h3 {
+    font-family: 'Ubuntu', sans-serif;
     font-size: 1.5rem;
-    margin-block: .7rem;
 }
-.project-card a {
-    padding: 0;
+#projecten section div p {
+    margin-block: 1rem;
+    max-width: 400px;
+}
+#projecten section div a {
+    font-size: 1rem;
+    background-color: var(--gray);
     color: var(--black);
-    background-color: initial;
+    width: max-content;
+}
+#projecten section div a:hover {
     text-decoration: underline;
 }
 
@@ -271,6 +287,7 @@ h2 {
 /* javascript */
 .icon {
     color: var(--icon-color);
+
     font-size: 4rem;
     position: absolute;
     left: 0;
@@ -289,12 +306,8 @@ h2 {
         display: none;
     }
 
-    body {
-        margin-left: 4rem;
-        margin-right: 3rem;
-    }
-    nav {
-        transform: translateX(-4rem);
+    #about_me, #home {
+        margin-inline: 4rem;
     }
 
     .linkbutton {
@@ -335,17 +348,13 @@ h2 {
 
     /* about me */
 
-    #about_me, #projecten{
+    #about_me{
         padding-inline: 0;
     }
     h2 {
         font-size: 4rem;
     }
-    
-    /* .ditwordtdeimage {
-        width: 275px;
-        height: 385px;
-    } */
+
     #about_me img {
         width: 275px;
         height: 385px;
@@ -371,13 +380,30 @@ h2 {
 
     /* projecten */
 
-    .project-card h3 {
-        font-size: 3rem;
-        font-weight: 400;
+    #projecten h2 {
+        padding: 0;
+        margin-inline: 4rem;
     }
-    .project-card a {
+
+    #projecten section img {
+        max-width: 500px;
+    }
+    #projecten section > div {
+        padding-top: 1rem;
+        padding-right: 1rem;
+    }
+    #projecten section h3 {
         font-size: 2rem;
     }
+    #projecten section div p {
+        font-size: 1.5rem;
+        max-width: 500px;
+    }
+    #projecten section div a {
+        font-size: 1.5rem;
+    }
+
+    /* js */
     
     .icon {
         font-size: 6rem;
@@ -405,7 +431,8 @@ h2 {
         border-radius: 15px;
     }
     main {
-        margin-left: 300px;
+        flex-grow: 1;
+        margin-left: 200px;
         position: relative;
     }
 
@@ -419,7 +446,11 @@ h2 {
     #about_me > div {
         display: flex;
         flex-direction: row-reverse;
+        justify-content: start;
         gap: 5rem;
+    }
+    #about_me section {
+        flex: 0 0 700px;
     }
     .profiel {
         flex-direction: column;
@@ -430,5 +461,31 @@ h2 {
     }
     .links {
         flex-direction: row;
+    }
+
+    /* projecten */
+    #projecten section {
+        flex-wrap: nowrap;
+        justify-content: start;
+    }
+    #projecten img {
+        margin-left: 4rem;
+        flex-shrink: 1;
+    }
+    #projecten section > div {
+        padding-top: 0;
+        margin-left: 2rem;
+        flex-grow: 0;
+        flex-basis: 500px;
+    }
+    #projecten section h3 {
+        font-size: 2.5rem;
+    }
+    #projecten section div p {
+        max-width: 500px;
+        font-size: 1.8rem;
+    }
+    #projecten section div a {
+        font-size: 1.8rem;
     }
 }
