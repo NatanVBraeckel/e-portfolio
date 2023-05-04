@@ -33,6 +33,9 @@ img {
     max-width: 300px;
 }
 
+.links {
+    display: none;
+}
 .links i {
     font-size: 2rem;
     color: var(--white);
@@ -64,4 +67,89 @@ img {
 }
 .links a:hover::after {
     transform: translateY(6px) translateZ(-1px);
+}
+
+.linkbutton {
+    display: inline-block;
+    font-weight: bold;
+    font-size: 1.25rem;
+    background-color: var(--black);
+    text-decoration: none;
+    border-radius: 15px;
+    text-align: center;
+    padding: .8rem 1rem;
+    width: 200px;
+    position: relative;
+    transition: 250ms;
+}
+.linkbutton:before {
+    content: "";
+    position: absolute;
+    opacity: 0.3;
+    background-color: var(--black);
+    border-radius: inherit;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    transition: all 250ms;
+}
+.linkbutton:hover {
+    transform: translateY(-10px);
+}
+.linkbutton:hover::before {
+    transform: translateY(10px);
+}
+
+a {
+    color: var(--white);
+}
+
+header {
+    margin-block: 2rem;
+    text-align: center;
+}
+h1, img{
+    margin-bottom: 1rem;
+}
+
+main {
+    margin-inline: 2rem;
+}
+
+section{
+    margin-block-end: 2rem;
+}
+section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+section p {
+    line-height: 1.5;
+}
+
+@media screen and (min-width: 900px) {
+    header {
+        text-align: left;
+        margin-left: 2rem;
+        display: flex;
+        gap: 2rem;
+        align-items: start;
+        flex-wrap: wrap;
+    }
+    header h1 {
+        font-size: 4rem;
+        margin-bottom: 0;
+    }
+    header img {
+        max-width: 500px;
+    }
+
+    section h2 {
+        font-size: 2.5rem;
+    }
+    section p {
+        font-size: 1.5rem;
+    }
 }
