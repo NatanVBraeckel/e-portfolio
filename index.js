@@ -9,7 +9,7 @@ const iconWhite = "rgba(230,230,230,.5)";
 }) */
 
 const lightSwitch = document.getElementById("light-switch");
-const iconButton = button.querySelector("i");
+const iconButton = lightSwitch.querySelector("i");
 lightSwitch.addEventListener("click", () => {
     if(isLight){
         document.querySelector(":root").style.setProperty('--black', white);
