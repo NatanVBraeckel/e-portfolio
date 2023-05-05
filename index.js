@@ -3,11 +3,14 @@ const white = "#f5f5f5";
 const black = "#222";
 const iconBlack = "rgba(19,19,19,.5)";
 const iconWhite = "rgba(230,230,230,.5)";
-let iconColor = iconWhite
 
-const button = document.querySelector("button");
+/* document.getElementById("randomKleur").addEventListener("click", () => {
+    document.querySelector(":root").style.setProperty('--dark-black', `#${Math.floor(Math.random()*16777215).toString(16)}`);
+}) */
+
+const lightSwitch = document.getElementById("light-switch");
 const iconButton = button.querySelector("i");
-button.addEventListener("click", () => {
+lightSwitch.addEventListener("click", () => {
     if(isLight){
         document.querySelector(":root").style.setProperty('--black', white);
         document.querySelector(":root").style.setProperty('--white', black);

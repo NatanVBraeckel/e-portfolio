@@ -1,6 +1,5 @@
 let score = 0;
-const iconWhite = "rgba(230,230,230,.5)";
-let iconColor = iconWhite
+let iconColor = iconWhite ? iconWhite : "rgba(230,230,230,.5)";
 const scoreCard = document.getElementById("score");
 
 const updateScore = (amount) => {
