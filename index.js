@@ -8,9 +8,9 @@ const iconWhite = "rgba(230,230,230,.5)";
     document.querySelector(":root").style.setProperty('--dark-black', `#${Math.floor(Math.random()*16777215).toString(16)}`);
 }) */
 
-const lightSwitch = document.getElementById("light-switch");
-const iconButton = lightSwitch.querySelector("i");
-lightSwitch.addEventListener("click", () => {
+//const lightSwitch = document.getElementById("light-switch");
+//const iconButton = lightSwitch.querySelector("i");
+/* lightSwitch.addEventListener("click", () => {
     if(isLight){
         document.querySelector(":root").style.setProperty('--black', white);
         document.querySelector(":root").style.setProperty('--white', black);
@@ -31,7 +31,7 @@ lightSwitch.addEventListener("click", () => {
         iconColor = iconWhite;
         isLight = true;
     }
-});
+}); */
 
 //leeftijd in about me
 function calculate_age(dob) { 
