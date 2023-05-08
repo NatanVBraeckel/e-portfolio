@@ -8,6 +8,8 @@ const iconWhite = "rgba(230,230,230,.5)";
     document.querySelector(":root").style.setProperty('--dark-black', `#${Math.floor(Math.random()*16777215).toString(16)}`);
 }) */
 
+//besloten om het veranderen van dark-light mode weg te laten omdat ik het niet echt passend vond
+
 //const lightSwitch = document.getElementById("light-switch");
 //const iconButton = lightSwitch.querySelector("i");
 /* lightSwitch.addEventListener("click", () => {
@@ -33,6 +35,12 @@ const iconWhite = "rgba(230,230,230,.5)";
     }
 }); */
 
+//home in laten faden
+/* window.setTimeout(() => {
+    document.getElementById("home").classList.add("appear");
+}, 200);
+ */
+
 //leeftijd in about me
 function calculate_age(dob) { 
     var diff_ms = Date.now() - dob.getTime();
@@ -42,12 +50,28 @@ function calculate_age(dob) {
 }
 document.getElementById("age").innerText = calculate_age(new Date(2001, 6, 8));
 
-
-//smooth scroll
-
-//document.querySelectorAll("a[href^='#']")
+//variabelen voor de verschillende anchors/gedeeltes pagina
 const anchorTop = document.querySelector("a[href='#']");
 const IdAnchors = ["about_me", "projecten"];
+
+//fade in 
+
+const options = {
+    rootMargin: "0px 0px -200px 0px"
+};
+
+const observer = new IntersectionObserver(function(entries, observer){
+    entries.forEach(entry => {
+        if(!entry.isIntersecting){
+            return
+        } else {
+            entry.target.classList.add('appear');
+            observer.unobserve(entry.target);
+        }
+    })
+}, options)
+
+//smooth scroll
 
 anchorTop.addEventListener("click", function(e){
     e.preventDefault();
@@ -70,4 +94,7 @@ IdAnchors.forEach(id => {
             document.getElementById(`${id}`).classList.remove("scroll-margin-top");
         });
     });
+    document.querySelectorAll(`#${id}`).forEach(section => {
+        observer.observe(section);
+    })
 });

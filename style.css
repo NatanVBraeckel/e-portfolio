@@ -298,6 +298,14 @@ h2 {
     scroll-margin-top: 2rem;
 }
 
+.fade-in {
+    opacity: 0;
+    transition: 300ms ease-in;
+}
+.appear {
+    opacity: 1;
+}
+
 @media only screen and (min-width: 900px) {
     .small-hide {
         display: inline-block;
