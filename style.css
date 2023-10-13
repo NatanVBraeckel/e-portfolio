@@ -26,7 +26,7 @@ body {
 }
 
 h1, h2, h3 {
-    font-family: "Mogra", cursive;
+    font-family: "Ubuntu", sans-serif;
 }
 
 nav {
@@ -55,7 +55,7 @@ nav a {
 }
 nav a:hover {
     transform: translate(0px, -5px);
-    border-radius: 10px;
+    /* border-radius: 10px; */
 }
 
 #score {
@@ -435,8 +435,8 @@ h2 {
         font-size: 1.5rem;
     }
     nav a:hover {
-        transform: translate(10px, 0px);
-        border-radius: 15px;
+        transform: translate(5px, 0px);
+        border-radius: 3px;
     }
     main {
         flex-grow: 1;
@@ -445,7 +445,6 @@ h2 {
     }
 
     .navborder {
-        border-right: 2px solid var(--forever-white);
         border-top: none;
     }
 
